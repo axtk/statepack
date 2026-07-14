@@ -29,9 +29,9 @@
   "author": "axtk",
   "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "^1.59.1",
-    "@types/node": "^25.6.2",
-    "auxsrv": "^0.3.17",
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1",
+    "auxsrv": "^0.3.19",
     "url-shape": "^2.1.6",
     "zod": "^4.4.3"
   },
