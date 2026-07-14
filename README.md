@@ -1,4 +1,4 @@
-# bridgestate
+# statepod
 
 Vanilla TS/JS state management for sharing data across decoupled parts of the code and routing. Routing is essentially shared state management, too, with the shared data being the URL.
 
@@ -25,7 +25,7 @@ Contents: [State](#state) · [PersistentState](#persistentstate) · [Route](#rou
 A thin data container for dynamic data sharing without tight coupling.
 
 ```js
-import { State } from "bridgestate";
+import { State } from "statepod";
 
 const counterState = new State(42);
 
@@ -47,8 +47,8 @@ A `"set"` event callback is called each time the state value changes and immedia
 A variety of `State` that syncs its data to the browser storage and restores it on page reload. Otherwise, almost identical to `State` in usage.
 
 ```diff
-- import { State } from "bridgestate";
-+ import { PersistentState } from "bridgestate";
+- import { State } from "statepod";
++ import { PersistentState } from "statepod";
 
 - const counterState = new State(42);
 + const counterState = new PersistentState(42, { key: "counter" });
@@ -71,7 +71,7 @@ Instances of `PersistentState` automatically sync their values with the browser 
 Stores the URL, exposes a native-like API for SPA navigation and an API for URL matching.
 
 ```js
-import { Route } from "bridgestate";
+import { Route } from "statepod";
 
 const route = new Route();
 ```
@@ -184,8 +184,8 @@ route.on("navigationstart", ({ href }) => {
 - [Type-safe URL-based rendering](https://codesandbox.io/p/sandbox/qg7qg3?file=%2Fsrc%2Findex.ts), Route, url-shape, zod
 - [SPA redirection](https://codesandbox.io/p/sandbox/rpl3gh?file=%252Fsrc%252Findex.ts), Route
 
-Find also the code of these examples in the repo's [`tests`](https://github.com/axtk/bridgestate/tree/main/tests) directory.
+Find also the code of these examples in the repo's [`tests`](https://github.com/axtk/statepod/tree/main/tests) directory.
 
 ## Integrations
 
-[`react-bridgestate`](https://www.npmjs.com/package/react-bridgestate)
+[`react-statepod`](https://www.npmjs.com/package/react-statepod)
