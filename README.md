@@ -22,7 +22,7 @@ Contents: [State](#state) · [PersistentState](#persistentstate) · [Route](#rou
 
 ## `State`
 
-A thin data container for dynamic data sharing without tight coupling.
+`State` is a thin container for dynamic data. It enables data sharing across multiple parts of code without making these parts directly dependent on each other.
 
 ```js
 import { State } from "statepod";
@@ -38,13 +38,13 @@ counterState.on("set", ({ current }) => {
 });
 ```
 
-In this example, a button changes a counter value and an `<output>` element shows the updating value. Both elements are only aware of the shared counter state, but not of each other.
+In this example, a button changes a counter value and an `<output>` element shows the updating value. Both elements are decoupled from each other: they are only aware of the shared counter state, but not of each other.
 
 A `"set"` event callback is called each time the state value changes and immediately when the callback is added. Subscribe to the `"update"` event to have the callback respond only to the subsequent state changes without the immediate invocation.
 
 ## `PersistentState`
 
-A variety of `State` that syncs its data to the browser storage and restores it on page reload. Otherwise, almost identical to `State` in usage.
+`PersistentState` is a variety of `State` that syncs its data to the browser storage and restores it on page reload. The way it's used is almost identical to `State`.
 
 ```diff
 - import { State } from "statepod";
@@ -68,7 +68,7 @@ Instances of `PersistentState` automatically sync their values with the browser 
 
 ## `Route`
 
-Stores the URL, exposes a native-like API for SPA navigation and an API for URL matching.
+`Route` stores the URL and exposes a `window.location`-like API for SPA navigation with a URL matching API.
 
 ```js
 import { Route } from "statepod";
@@ -76,7 +76,7 @@ import { Route } from "statepod";
 const route = new Route();
 ```
 
-Navigate to other URLs in a SPA fashion similarly to the native APIs:
+Navigate to other URLs in a SPA fashion similarly to the browser APIs:
 
 ```js
 route.href = "/intro";
@@ -177,12 +177,12 @@ route.on("navigationstart", ({ href }) => {
 
 ## Annotated examples
 
-- [Shared state](https://codesandbox.io/p/sandbox/lqt3z2?file=%252Fsrc%252Findex.ts), counter app, State
-- [Shared form input state](https://codesandbox.io/p/sandbox/4q7f99?file=%252Fsrc%252Findex.ts), simple form, State
-- [Persistent shared state](https://codesandbox.io/p/sandbox/c9gt3r?file=%252Fsrc%252Findex.ts), counter app, PersistentState
-- [URL-based rendering](https://codesandbox.io/p/sandbox/kt6m5l?file=%252Fsrc%252Findex.ts), Route
-- [Type-safe URL-based rendering](https://codesandbox.io/p/sandbox/qg7qg3?file=%2Fsrc%2Findex.ts), Route, url-shape, zod
-- [SPA redirection](https://codesandbox.io/p/sandbox/rpl3gh?file=%252Fsrc%252Findex.ts), Route
+- [Shared state](https://codesandbox.io/p/sandbox/lqt3z2?file=%252Fsrc%252Findex.ts): counter app, State
+- [Shared form input state](https://codesandbox.io/p/sandbox/4q7f99?file=%252Fsrc%252Findex.ts): simple form, State
+- [Persistent shared state](https://codesandbox.io/p/sandbox/c9gt3r?file=%252Fsrc%252Findex.ts): counter app, PersistentState
+- [URL-based rendering](https://codesandbox.io/p/sandbox/kt6m5l?file=%252Fsrc%252Findex.ts): Route
+- [Type-safe URL-based rendering](https://codesandbox.io/p/sandbox/qg7qg3?file=%2Fsrc%2Findex.ts): Route, url-shape, zod
+- [SPA redirection](https://codesandbox.io/p/sandbox/rpl3gh?file=%252Fsrc%252Findex.ts): Route
 
 Find also the code of these examples in the repo's [`tests`](https://github.com/axtk/statepod/tree/main/tests) directory.
 
