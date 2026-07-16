@@ -177,12 +177,12 @@ route.on("navigationstart", ({ href }) => {
 
 ## Annotated examples
 
-- [Shared state](https://codesandbox.io/p/sandbox/lqt3z2?file=%252Fsrc%252Findex.ts): counter app, State
-- [Shared form input state](https://codesandbox.io/p/sandbox/4q7f99?file=%252Fsrc%252Findex.ts): simple form, State
-- [Persistent shared state](https://codesandbox.io/p/sandbox/c9gt3r?file=%252Fsrc%252Findex.ts): counter app, PersistentState
-- [URL-based rendering](https://codesandbox.io/p/sandbox/kt6m5l?file=%252Fsrc%252Findex.ts): Route
-- [Type-safe URL-based rendering](https://codesandbox.io/p/sandbox/qg7qg3?file=%2Fsrc%2Findex.ts): Route, url-shape, zod
-- [SPA redirection](https://codesandbox.io/p/sandbox/rpl3gh?file=%252Fsrc%252Findex.ts): Route
+- [Shared state](https://codesandbox.io/p/sandbox/lqt3z2?file=%252Fsrc%252Findex.ts)
+- [Shared form input state](https://codesandbox.io/p/sandbox/4q7f99?file=%252Fsrc%252Findex.ts)
+- [Persistent shared state](https://codesandbox.io/p/sandbox/c9gt3r?file=%252Fsrc%252Findex.ts)
+- [URL-based rendering](https://codesandbox.io/p/sandbox/kt6m5l?file=%252Fsrc%252Findex.ts)
+- [Type-safe URL-based rendering](https://codesandbox.io/p/sandbox/qg7qg3?file=%2Fsrc%2Findex.ts)
+- [SPA redirection](https://codesandbox.io/p/sandbox/rpl3gh?file=%252Fsrc%252Findex.ts)
 
 Find also the code of these examples in the repo's [`tests`](https://github.com/axtk/statepod/tree/main/tests) directory.
 
