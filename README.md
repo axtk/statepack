@@ -1,6 +1,6 @@
 # statepod
 
-Vanilla TS/JS state management for sharing data across decoupled parts of the code and routing. Routing is essentially shared state management, too, with the shared data being the URL.
+Vanilla TS/JS state management for sharing data across decoupled parts of the code + routing. Routing is essentially shared state management, too, with the shared data being the URL.
 
 This package exposes the following classes:
 
@@ -10,13 +10,13 @@ EventEmitter ──► State ──► PersistentState
                     └────► URLState ──► Route
 ```
 
-Roughly, their purpose boils down to the following:
+Their purpose boils down to the following:
 
-- `EventEmitter` is for triggering actions without tightly coupling the interacting components
-- `State` is `EventEmitter` that stores data and emits an event when the data gets updated, it's for dynamic data sharing without tight coupling
+- `EventEmitter` triggers actions without tightly coupling the interacting components
+- `State` is `EventEmitter` that stores data and emits an event when the data gets updated allowing for dynamic data sharing without tight coupling
 - `PersistentState` is `State` that syncs its data to the browser storage and restores it on page reload
-- `URLState` is `State` that stores the URL + syncs with the browser's URL in a SPA fashion
-- `Route` is `URLState` + native-like APIs for SPA navigation and an API for URL matching
+- `URLState` is `State` that stores the URL and updates it in a SPA fashion
+- `Route` is `URLState` with a `window.location`-like SPA navigation API and a URL matching API
 
 Contents: [State](#state) · [PersistentState](#persistentstate) · [Route](#route) · [Annotated examples](#annotated-examples) · [Integrations](#integrations)
 
