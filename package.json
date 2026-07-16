@@ -1,6 +1,6 @@
 {
   "name": "statepod",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Vanilla TS/JS shared state management and routing",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
