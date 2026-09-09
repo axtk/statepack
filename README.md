@@ -1,4 +1,4 @@
-# statepod
+# statepack
 
 Vanilla TS/JS state management for sharing data across decoupled parts of the code + routing. Routing is essentially shared state management, too, with the shared data being the URL.
 
@@ -25,7 +25,7 @@ Contents: [State](#state) · [PersistentState](#persistentstate) · [Route](#rou
 `State` is a thin container for dynamic data. It enables data sharing across multiple parts of code without making these parts directly dependent on each other.
 
 ```js
-import { State } from "statepod";
+import { State } from "statepack";
 
 const counterState = new State(42);
 
@@ -47,8 +47,8 @@ A `"set"` event callback is called each time the state value changes and immedia
 `PersistentState` is a variety of `State` that syncs its data to the browser storage and restores it on page reload. The way it's used is almost identical to `State`.
 
 ```diff
-- import { State } from "statepod";
-+ import { PersistentState } from "statepod";
+- import { State } from "statepack";
++ import { PersistentState } from "statepack";
 
 - const counterState = new State(42);
 + const counterState = new PersistentState(42, { key: "counter" });
@@ -71,7 +71,7 @@ Instances of `PersistentState` automatically sync their values with the browser 
 `Route` stores the URL and exposes a `window.location`-like API for SPA navigation with a URL matching API.
 
 ```js
-import { Route } from "statepod";
+import { Route } from "statepack";
 
 const route = new Route();
 ```
@@ -184,8 +184,8 @@ route.on("navigationstart", ({ href }) => {
 - [Type-safe URL-based rendering](https://codesandbox.io/p/sandbox/qg7qg3?file=%2Fsrc%2Findex.ts)
 - [SPA redirection](https://codesandbox.io/p/sandbox/rpl3gh?file=%252Fsrc%252Findex.ts)
 
-Find also the code of these examples in the repo's [`tests`](https://github.com/axtk/statepod/tree/main/tests) directory.
+Find also the code of these examples in the repo's [`tests`](https://github.com/axtk/statepack/tree/main/tests) directory.
 
 ## Integrations
 
-[`react-statepod`](https://www.npmjs.com/package/react-statepod)
+[`react-statepack`](https://www.npmjs.com/package/react-statepack)

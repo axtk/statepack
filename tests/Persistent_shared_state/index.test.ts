@@ -30,7 +30,7 @@ test.describe("counter", () => {
 
     await page.goto("/");
     await page.evaluate(() => {
-      window.localStorage.removeItem("statepod-dev-counter");
+      window.localStorage.removeItem("statepack-dev-counter");
     });
     await page.reload();
 
@@ -50,7 +50,7 @@ test.describe("counter", () => {
 
     await page.goto("/");
     await page.evaluate(() => {
-      window.localStorage.removeItem("statepod-dev-counter");
+      window.localStorage.removeItem("statepack-dev-counter");
     });
     await page.reload();
 
